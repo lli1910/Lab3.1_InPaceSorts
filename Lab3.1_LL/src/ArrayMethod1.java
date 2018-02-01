@@ -5,7 +5,7 @@ public class ArrayMethod1 {
 		int [] insert = {2,3,6,5,4,1};
 		bubbleSort(bubble);
 		for(String s:bubble) {
-			System.out.print(s + ", ");
+			System.out.print(s);
 		}
 	}
 	
@@ -19,7 +19,7 @@ public class ArrayMethod1 {
 	
 	public static void selectionSort(double [] list1) {
 		
-		
+		 
 		
 	}
 	
