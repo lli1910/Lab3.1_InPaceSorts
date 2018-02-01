@@ -4,7 +4,9 @@ public class ArrayMethod1 {
 		String[] bubble = {"Delta","Alpha", "Charlie", "Beta"};
 		int [] insert = {2,3,6,5,4,1};
 		bubbleSort(bubble);
-		System.out.println(bubble);
+		for(String s:bubble) {
+			System.out.print(s + ", ");
+		}
 	}
 	
 	
@@ -22,12 +24,16 @@ public class ArrayMethod1 {
 	}
 	
 	public static void bubbleSort(String[] stringArr) {
-		int swap = 0;
+		int swap = 100;
 		
-		for(int i = 0; i < stringArr.length - 2; i++) {
-			//remember swap value
-			//if arr element is greater than the next array element, swap
-			
+		while(swap != 0) {
+			for(int i = 0; i < stringArr.length - 1; i++) {
+				swap = 0;
+				if(stringArr[i].compareTo(stringArr[i+1]) > 0) {
+					stringSwap(stringArr,i,i+1);
+					swap++;
+				}
+			}
 		}
 	}
 	
