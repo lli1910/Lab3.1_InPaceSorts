@@ -3,10 +3,18 @@ public class ArrayMethod1 {
 	public static void main(String args[]) {
 		String[] bubble = {"Delta","Alpha", "Charlie", "Beta"};
 		int [] insert = {2,3,6,5,4,1};
+		double [] select = {1.2,7.8,2.3,5.6,3.4}
+		
 		bubbleSort(bubble);
 		for(String s:bubble) {
 			System.out.print(s);
 		}
+		
+		selectionSort(select);
+		for(String a:select) {
+			System.out.print(a);
+		}
+		
 	}
 	
 	
@@ -17,8 +25,14 @@ public class ArrayMethod1 {
 		
 	}
 	
-	public static void selectionSort(double [] list1) {
-		
+	public static void selectionSort(double [] doubleArr) {
+		for(int i = 0; i < doubleArr.length; i++) {
+			for(int j = i+1; j<doubleArr.length-1;j++) {
+				if(doubleArr[i]>doubleArr[j]) {
+					doubleSwap(doubleArr,i,j)
+				}
+			}
+		}
 		 
 		
 	}
@@ -36,13 +50,13 @@ public class ArrayMethod1 {
 			}
 		}
 	}
-	
-	
-
-	
-	
 	public static void intSwap(int[]arr, int index1, int index2) {
 		int num = arr[index1];
+		arr[index1]=arr[index2];
+		arr[index2]=num;
+	}
+	public static void doubleSwap(double[]arr, int index1, int index2) {
+		double num = arr[index1];
 		arr[index1]=arr[index2];
 		arr[index2]=num;
 	}
