@@ -2,40 +2,50 @@ public class ArrayMethod1 {
    //bubble sort
 	public static void main(String args[]) {
 		String[] bubble = {"Delta","Alpha", "Charlie", "Beta"};
-		int [] insert = {3,2,5,5,1};
+		int [] insert = {4,3,2,5,1};
 		double [] select = {1.2,7.8,7.8,2.3,5.6,3.4};
 		
 		bubbleSort(bubble);
 		for(String s:bubble) {
-			System.out.print(s);
-			System.out.println();
+			System.out.println(s);
 		}
 		 
 		selectionSort(select);
 		for(double a:select) {
-			System.out.print(a);
-			System.out.println();
+			System.out.println(a);
 		}
 		
 		insertionSort(insert);
 		for(int b:insert) {
-			System.out.print(b);
-			System.out.println();
+			System.out.println(b);
 		}
 	}
 	
-	
+	//equal//where the swap it
 	public static void insertionSort(int [] list1) {
-		//https://www.geeksforgeeks.org/insertion-sort/
-		for(int i = 0; i<list1.length-1; i++ ) {
-			for(int j=i+1;j<list1.length-1;j++) {
-				if(list1[i]>list1[j]) {
+		/*
+		for(int i = 0; i<list1.length; i++ ) {
+			for(int j=i+1;j<list1.length;j++) {
+				if(list1[j]<list1[i]) {
 					intSwap(list1, i, j);
+					//i--;
 					j--;
-					i--;
+				}
+				else if(list1[j]>list1[i]) {
+					break;
+				}
+			}	
+		}
+		*/
+		int swapNum = 0;
+		for(int i = 1; i<list1.length;i++) {
+			for(int j=i-1; j>=0;j--) {
+				if(list1[i]<list1[j]) {
+					swapNum = j;
+					break;
 				}
 			}
-			
+			intSwap(list1, i, swapNum);
 		}
 		
 		
@@ -50,8 +60,6 @@ public class ArrayMethod1 {
 				}
 			}
 		}
-		 
-		
 	}
 	
 	public static void bubbleSort(String[] stringArr) {
@@ -67,6 +75,7 @@ public class ArrayMethod1 {
 			}
 		}
 	}
+	
 	public static void intSwap(int[]arr, int index1, int index2) {
 		int num = arr[index1];
 		arr[index1]=arr[index2];
