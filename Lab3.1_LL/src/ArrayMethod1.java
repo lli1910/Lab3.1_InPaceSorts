@@ -2,24 +2,41 @@ public class ArrayMethod1 {
    //bubble sort
 	public static void main(String args[]) {
 		String[] bubble = {"Delta","Alpha", "Charlie", "Beta"};
-		int [] insert = {2,3,6,5,4,1};
-		double [] select = {1.2,7.8,2.3,5.6,3.4}
+		int [] insert = {3,2,5,5,1};
+		double [] select = {1.2,7.8,7.8,2.3,5.6,3.4};
 		
 		bubbleSort(bubble);
 		for(String s:bubble) {
 			System.out.print(s);
+			System.out.println();
 		}
-		
+		 
 		selectionSort(select);
-		for(String a:select) {
+		for(double a:select) {
 			System.out.print(a);
+			System.out.println();
 		}
 		
+		insertionSort(insert);
+		for(int b:insert) {
+			System.out.print(b);
+			System.out.println();
+		}
 	}
 	
 	
 	public static void insertionSort(int [] list1) {
 		//https://www.geeksforgeeks.org/insertion-sort/
+		for(int i = 0; i<list1.length-1; i++ ) {
+			for(int j=i+1;j<list1.length-1;j++) {
+				if(list1[i]>list1[j]) {
+					intSwap(list1, i, j);
+					j--;
+					i--;
+				}
+			}
+			
+		}
 		
 		
 		
@@ -27,9 +44,9 @@ public class ArrayMethod1 {
 	
 	public static void selectionSort(double [] doubleArr) {
 		for(int i = 0; i < doubleArr.length; i++) {
-			for(int j = i+1; j<doubleArr.length-1;j++) {
+			for(int j = i+1; j<doubleArr.length;j++) {
 				if(doubleArr[i]>doubleArr[j]) {
-					doubleSwap(doubleArr,i,j)
+					doubleSwap(doubleArr,i,j);
 				}
 			}
 		}
