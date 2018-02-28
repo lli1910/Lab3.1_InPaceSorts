@@ -18,28 +18,20 @@ public class ArrayMethod1 {
 		
 		//Selection Sort test
 		start = System.nanoTime();
+		selectionSort(test2);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Test 2 took: " + time + " nanosec");
+		System.out.println(Arrays.toString(test2));
+		
+		//Bubble Sort test
+		start = System.nanoTime();
+		bubbleSort(test3);
+		end = System.nanoTime();
+		System.out.println("Test 3 took: " + time + " nanosec");
+		System.out.println(Arrays.toString(test3));
 		
 		
-		
-		
-		String[] bubble = {"Delta","Alpha", "Charlie", "Beta","Delta"};
-		int [] insert = {4,3,2,5,5,1,1};
-		double [] select = {1.2,7.8,7.8,2.3,5.6,7.8,3.4};
-		
-		bubbleSort(bubble);
-		for(String s:bubble) {
-			System.out.println(s);
-		}
-		 
-		selectionSort(select);
-		for(double a:select) {
-			System.out.println(a);
-		}
-		
-		insertionSort(insert);
-		for(int b:insert) {
-			System.out.println(b);
-		}
 	}
 	
 	public static void insertionSort(int [] list1) {
@@ -74,9 +66,9 @@ public class ArrayMethod1 {
 	public static void bubbleSort(String[] stringArr) {
 		int swap = 100;
 		
-		while(swap != 0) {
+		while(swap > 0) {
+			swap = 0;
 			for(int i = 0; i < stringArr.length - 1; i++) {
-				swap = 0;
 				if(stringArr[i].compareTo(stringArr[i+1]) > 0) {
 					stringSwap(stringArr,i,i+1);
 					swap++;
